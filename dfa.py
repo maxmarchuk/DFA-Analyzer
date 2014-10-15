@@ -3,7 +3,7 @@ import sys
 
 def get_states():
     states = []
-    print 'Input a list of states (hit the enter key when finished): '
+    print 'Input a list of states (Hit Enter after each one): '
     while True:
         temp_state = raw_input('State: ')
         if temp_state == '':
@@ -15,7 +15,7 @@ def get_states():
 
 def get_alphabet():
     alphabet = []
-    print 'Define your alphabet (Hit the enter key  when finished): '
+    print 'Define your alphabet: '
     while True:
         char = raw_input('Character: ')
         if char == '':
@@ -27,7 +27,7 @@ def get_alphabet():
 
 def get_transitions(states, alphabet):
     transitions = {}
-    print 'Define the mappings for the following states: '
+    print 'Define the mappings for the following states (Hit Enter after each one): '
     for state in states:
         transitions[state] = {}
         for character in alphabet:
@@ -45,7 +45,6 @@ def get_accepting_states(states):
     accepting_states = []
     state_string = ', '.join(states)
     print 'Define which states are accepting states (' + state_string + '): '
-    print '(Hit the enter key when finished)'
     while True:
         s = raw_input('State: ')
         if s == '':
@@ -53,6 +52,16 @@ def get_accepting_states(states):
             break
         accepting_states.append(s)
     return accepting_states
+
+def analyze(dfa, str):
+    current_state = dfa['start_state']
+    for char in str:
+        current_state = dfa['transitions'][current_state][char] 
+
+    if current_state in dfa['accepting_states']:
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
@@ -70,3 +79,8 @@ if __name__ == '__main__':
     dfa['start_state'] = start_state
     dfa['accepting_states'] = accepting_states
     print dfa
+
+if analyze(dfa, sys.argv[1]) == True:
+    print 'String is in the DFA!'
+else:
+    print 'String not in DFA :('
