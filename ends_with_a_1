@@ -1,0 +1,1 @@
+{"info": "ends with a 1", "start_state": "s1", "alphabet": ["0", "1"], "accepting_states": ["s2"], "states": ["s1", "s2"], "transitions": {"s2": {"1": "s2", "0": "s1"}, "s1": {"1": "s2", "0": "s1"}}}
