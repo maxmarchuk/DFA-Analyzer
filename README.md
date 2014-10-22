@@ -57,5 +57,5 @@ $ python analyzer.py ends_with_a_1 101
 $ python analyzer.py ends_with_a_1 100
   ✗ "100" is NOT in the language described by the DFA.
 $ ./analyzer.py ends_with_a_1 supercalifragilisticexpialidocious
-  ✗ "supercalifragilisticexpialidocious" is NOT in the language described by the DFA.
+  ✗ "supercalifragilisticexpialidocious1" is NOT in the language described by the DFA.
 ```

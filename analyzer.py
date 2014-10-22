@@ -20,6 +20,7 @@ def analyze(dfa, str):
     else:
         return False
 
+#Function to open the file and return the decoded string as an object
 def parse_file(filename):
     dfa_file = open(filename, 'r').read()
     return jsonpickle.decode(dfa_file)
