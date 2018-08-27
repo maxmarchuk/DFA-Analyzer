@@ -1,7 +1,7 @@
 DFA Creator + Analyzer
 =========
 
-DFA Creator + Analyzer is a tool for gathering necessary input for a Deterministic Finite Automata and analyzing strings to determine whether or not they are in that DFA's language.
+DFA (Deterministic Finite Automaton) Creator + Analyzer is a tool for gathering necessary input for a Deterministic Finite Automata and analyzing strings to determine whether or not they are in that DFA's language.
 
 Requirements
 --------------
